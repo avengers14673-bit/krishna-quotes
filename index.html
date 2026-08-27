@@ -131,5 +131,112 @@ h1 {
 
 </div>
 
-</body>
+</body> <div style="text-align:center; margin:25px 10px;">
+
+<button id="fluteBtn"
+style="padding:14px 22px; border:0; border-radius:30px; font-size:16px; font-weight:bold;">
+🎵 Play Krishna Flute
+</button>
+
+<br>
+
+<button id="blessingBtn"
+style="padding:14px 22px; border:0; border-radius:30px; font-size:16px; font-weight:bold;">
+💙 Tap for More Krishna Blessings
+</button>
+
+</div>
+
+<audio id="fluteAudio" loop>
+<source src="audio/flute.mp3" type="audio/mpeg">
+</audio>
+
+<div id="blessingPopup"></div>
+
+<script>
+
+const flute = document.getElementById("fluteAudio");
+const fluteBtn = document.getElementById("fluteBtn");
+const blessingBtn = document.getElementById("blessingBtn");
+const popup = document.getElementById("blessingPopup");
+
+flute.volume = 0.30;
+
+fluteBtn.onclick = function() {
+
+  if (flute.paused) {
+    flute.play();
+    fluteBtn.innerHTML = "🔇 Stop Krishna Flute";
+  } else {
+    flute.pause();
+    fluteBtn.innerHTML = "🎵 Play Krishna Flute";
+  }
+
+};
+
+const blessings = [
+"May Krishna fill your life with happiness and peace. 💙",
+
+"May Shri Krishna always guide you towards the right path. 🦚",
+
+"May your heart always be filled with love and joy. 🌸",
+
+"May Krishna bless you and your family with endless happiness. 🪔",
+
+"May every difficulty in your life turn into a new blessing. ✨",
+
+"May Krishna's divine flute bring peace to your heart. 🎵"
+];
+
+let number = 0;
+
+blessingBtn.onclick = function() {
+
+popup.innerHTML = `
+<div style="
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:80%;
+max-width:350px;
+padding:25px;
+text-align:center;
+border-radius:25px;
+background:#172f55;
+color:white;
+box-shadow:0 0 40px rgba(255,215,100,.6);
+z-index:9999;
+">
+
+<div style="font-size:45px;">🦚✨</div>
+
+<h2 style="color:#ffd76b;">
+Krishna's Blessing
+</h2>
+
+<p style="font-size:18px;line-height:1.6;">
+${blessings[number]}
+</p>
+
+<div style="font-size:25px;">
+🌸 Radhe Radhe 🌸
+</div>
+
+</div>
+`;
+
+number++;
+
+if(number >= blessings.length) {
+number = 0;
+}
+
+setTimeout(function() {
+popup.innerHTML = "";
+},4000);
+
+};
+
+</script>
 </html>
