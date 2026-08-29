@@ -133,6 +133,11 @@
       background: #2874a6;
     }
 
+    .audio-player {
+      margin-top: 18px;
+      width: min(90%, 340px);
+    }
+
     .popup-overlay {
       position: fixed;
       inset: 0;
@@ -254,6 +259,15 @@
         🎵 Play Krishna Flute
       </button>
 
+      <audio
+        id="fluteAudio"
+        class="audio-player"
+        controls
+        preload="auto">
+        <source src="./flute.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+
       <button
         id="blessingBtn"
         class="action-btn blessing-btn"
@@ -264,11 +278,6 @@
     </div>
 
   </div>
-
-  <!-- Flute music: flute.mp3 is in the same folder as index.html -->
-  <audio id="fluteAudio" loop preload="metadata">
-    <source src="flute.mp3" type="audio/mpeg">
-  </audio>
 
   <div id="blessingPopup"></div>
 
@@ -300,6 +309,18 @@
 
       }
 
+    });
+
+    flute.addEventListener("play", function () {
+      fluteBtn.innerHTML = "⏸️ Pause Krishna Flute";
+    });
+
+    flute.addEventListener("pause", function () {
+      fluteBtn.innerHTML = "🎵 Play Krishna Flute";
+    });
+
+    flute.addEventListener("error", function () {
+      fluteBtn.innerHTML = "⚠️ Audio file error";
     });
 
 
