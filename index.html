@@ -1,242 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Krishna Janmashtami 🦚💙</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>Krishna Janmashtami 🦚💙</title>
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Georgia, serif;
-  color: #fff;
-  text-align: center;
-  background:
-    radial-gradient(circle at 50% 20%, #315b91 0%, #172b52 35%, #080f24 100%);
-  overflow-x: hidden;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-.container {
-  min-height: 100vh;
-  padding: 35px 20px 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, serif;
+      color: #fff;
+      text-align: center;
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          #315b91 0%,
+          #172b52 35%,
+          #080f24 100%
+        );
+      overflow-x: hidden;
+    }
 
-.feather {
-  font-size: 70px;
-  animation: float 3s ease-in-out infinite;
-}
+    .container {
+      min-height: 100vh;
+      padding: 35px 20px 45px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-h1 {
-  margin: 10px 0;
-  font-size: clamp(34px, 10vw, 58px);
-  color: #ffe08a;
-  text-shadow: 0 0 18px rgba(255, 224, 138, 0.6);
-}
+    .feather {
+      font-size: 70px;
+      animation: float 3s ease-in-out infinite;
+    }
 
-.subtitle {
-  font-size: 20px;
-  color: #d8eaff;
-  margin-bottom: 25px;
-}
+    h1 {
+      margin: 10px 0;
+      font-size: clamp(34px, 10vw, 58px);
+      color: #ffe08a;
+      text-shadow: 0 0 18px rgba(255, 224, 138, 0.6);
+    }
 
-.card {
-  width: min(92%, 500px);
-  padding: 30px 22px;
-  border-radius: 28px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.25);
-  box-shadow: 0 15px 45px rgba(0,0,0,0.35);
-  backdrop-filter: blur(10px);
-}
+    .subtitle {
+      font-size: 20px;
+      color: #d8eaff;
+      margin-bottom: 25px;
+    }
 
-.card h2 {
-  color: #ffe08a;
-  margin-top: 0;
-}
+    .card {
+      width: min(92%, 500px);
+      padding: 30px 22px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
+    }
 
-.quote {
-  font-size: 21px;
-  line-height: 1.7;
-  color: #fff;
-}
+    .card h2 {
+      color: #ffe08a;
+      margin-top: 0;
+    }
 
-.radhe {
-  margin-top: 25px;
-  font-size: 28px;
-  color: #8ed8ff;
-}
+    .quote {
+      font-size: 21px;
+      line-height: 1.7;
+      color: #fff;
+    }
 
-.footer {
-  margin-top: 30px;
-  font-size: 16px;
-  color: #c9d8ef;
-}
+    .radhe {
+      margin-top: 25px;
+      font-size: 28px;
+      color: #8ed8ff;
+    }
 
-.diya {
-  font-size: 34px;
-  margin: 20px 0;
-}
+    .diya {
+      font-size: 34px;
+      margin: 25px 0;
+    }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-</style>
+    .footer {
+      margin-top: 10px;
+      max-width: 500px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #c9d8ef;
+    }
+
+    .buttons {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .action-btn {
+      width: min(90%, 340px);
+      padding: 14px 22px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 9px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .action-btn:active {
+      transform: scale(0.96);
+    }
+
+    .music-btn {
+      background: #d99b22;
+    }
+
+    .blessing-btn {
+      background: #2874a6;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 9999;
+    }
+
+    .popup {
+      width: min(90%, 360px);
+      padding: 28px 22px;
+      text-align: center;
+      border-radius: 25px;
+      background: linear-gradient(145deg, #1d416f, #102642);
+      color: white;
+      box-shadow: 0 0 40px rgba(255, 215, 100, 0.55);
+      animation: popupIn 0.3s ease;
+    }
+
+    .popup-icon {
+      font-size: 45px;
+    }
+
+    .popup h2 {
+      color: #ffd76b;
+      margin: 12px 0;
+    }
+
+    .popup p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .popup-radhe {
+      font-size: 25px;
+      margin-top: 15px;
+    }
+
+    .close-btn {
+      margin-top: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ffd76b;
+      color: #172b52;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes popupIn {
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <div class="feather">🦚</div>
+    <div class="feather">🦚</div>
 
-  <h1>Happy Janmashtami</h1>
+    <h1>Happy Janmashtami</h1>
 
-  <div class="subtitle">
-    💙 Jai Shri Krishna 💙
-  </div>
-
-  <div class="card">
-    <h2>🌸 Krishna Blessings 🌸</h2>
-
-    <p class="quote">
-      “May Lord Krishna fill your life with
-      peace, happiness, love and endless blessings.”
-    </p>
-
-    <div class="radhe">
-      🪷 Radhe Radhe 🪷
+    <div class="subtitle">
+      💙 Jai Shri Krishna 💙
     </div>
+
+    <div class="card">
+
+      <h2>🌸 Krishna Blessings 🌸</h2>
+
+      <p class="quote">
+        “May Lord Krishna fill your life with
+        peace, happiness, love and endless blessings.”
+      </p>
+
+      <div class="radhe">
+        🪷 Radhe Radhe 🪷
+      </div>
+
+    </div>
+
+    <div class="diya">
+      🪔 ✨ 🪔
+    </div>
+
+    <div class="footer">
+      May Krishna's flute bring music to your life
+      and His blessings light your path. 💙
+    </div>
+
+    <div class="buttons">
+
+      <button
+        id="fluteBtn"
+        class="action-btn music-btn"
+        type="button">
+        🎵 Play Krishna Flute
+      </button>
+
+      <button
+        id="blessingBtn"
+        class="action-btn blessing-btn"
+        type="button">
+        💙 Tap for More Krishna Blessings
+      </button>
+
+    </div>
+
   </div>
 
-  <div class="diya">🪔 ✨ 🪔</div>
+  <!-- Flute music: flute.mp3 is in the same folder as index.html -->
+  <audio id="fluteAudio" loop preload="metadata">
+    <source src="flute.mp3" type="audio/mpeg">
+  </audio>
 
-  <div class="footer">
-    May Krishna's flute bring music to your life
-    and His blessings light your path. 💙
-  </div>
+  <div id="blessingPopup"></div>
 
-</div>
+  <script>
 
-</body> <div style="text-align:center; margin:25px 10px;">
+    const flute = document.getElementById("fluteAudio");
+    const fluteBtn = document.getElementById("fluteBtn");
 
-<button id="fluteBtn"
-style="padding:14px 22px; border:0; border-radius:30px; font-size:16px; font-weight:bold;">
-🎵 Play Krishna Flute
-</button>
+    flute.volume = 0.30;
 
-<br>
+    fluteBtn.addEventListener("click", async function () {
 
-<button id="blessingBtn"
-style="padding:14px 22px; border:0; border-radius:30px; font-size:16px; font-weight:bold;">
-💙 Tap for More Krishna Blessings
-</button>
+      if (flute.paused) {
 
-</div>
+        try {
+          await flute.play();
+          fluteBtn.innerHTML = "⏸️ Pause Krishna Flute";
+        }
 
-<audio id="fluteAudio" loop>
-<source src="audio/flute.mp3" type="audio/mpeg">
-</audio>
+        catch (error) {
+          console.log("Audio playback error:", error);
+          fluteBtn.innerHTML = "⚠️ Music could not play";
+        }
 
-<div id="blessingPopup"></div>
+      } else {
 
-<script>
+        flute.pause();
+        fluteBtn.innerHTML = "🎵 Play Krishna Flute";
 
-const flute = document.getElementById("fluteAudio");
-const fluteBtn = document.getElementById("fluteBtn");
-const blessingBtn = document.getElementById("blessingBtn");
-const popup = document.getElementById("blessingPopup");
+      }
 
-flute.volume = 0.30;
+    });
 
-fluteBtn.onclick = function() {
 
-  if (flute.paused) {
-    flute.play();
-    fluteBtn.innerHTML = "🔇 Stop Krishna Flute";
-  } else {
-    flute.pause();
-    fluteBtn.innerHTML = "🎵 Play Krishna Flute";
-  }
+    const blessingBtn =
+      document.getElementById("blessingBtn");
 
-};
+    const popup =
+      document.getElementById("blessingPopup");
 
-const blessings = [
-"May Krishna fill your life with happiness and peace. 💙",
 
-"May Shri Krishna always guide you towards the right path. 🦚",
+    const blessings = [
 
-"May your heart always be filled with love and joy. 🌸",
+      "May Krishna fill your life with happiness and peace. 💙",
 
-"May Krishna bless you and your family with endless happiness. 🪔",
+      "May Shri Krishna always guide you towards the right path. 🦚",
 
-"May every difficulty in your life turn into a new blessing. ✨",
+      "May your heart always be filled with love and joy. 🌸",
 
-"May Krishna's divine flute bring peace to your heart. 🎵"
-];
+      "May Krishna bless you and your family with endless happiness. 🪔",
 
-let number = 0;
+      "May every difficulty in your life turn into a new blessing. ✨",
 
-blessingBtn.onclick = function() {
+      "May Krishna's divine flute bring peace to your heart. 🎵"
 
-popup.innerHTML = `
-<div style="
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:80%;
-max-width:350px;
-padding:25px;
-text-align:center;
-border-radius:25px;
-background:#172f55;
-color:white;
-box-shadow:0 0 40px rgba(255,215,100,.6);
-z-index:9999;
-">
+    ];
 
-<div style="font-size:45px;">🦚✨</div>
 
-<h2 style="color:#ffd76b;">
-Krishna's Blessing
-</h2>
+    let number = 0;
 
-<p style="font-size:18px;line-height:1.6;">
-${blessings[number]}
-</p>
 
-<div style="font-size:25px;">
-🌸 Radhe Radhe 🌸
-</div>
+    blessingBtn.addEventListener("click", function () {
 
-</div>
-`;
+      popup.innerHTML = `
 
-number++;
+        <div class="popup-overlay">
 
-if(number >= blessings.length) {
-number = 0;
-}
+          <div class="popup">
 
-setTimeout(function() {
-popup.innerHTML = "";
-},4000);
+            <div class="popup-icon">
+              🦚✨
+            </div>
 
-};
+            <h2>
+              Krishna's Blessing
+            </h2>
 
-</script>
+            <p>
+              ${blessings[number]}
+            </p>
+
+            <div class="popup-radhe">
+              🌸 Radhe Radhe 🌸
+            </div>
+
+            <button
+              class="close-btn"
+              onclick="closeBlessing()"
+              type="button">
+              Close
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      number++;
+
+      if (number >= blessings.length) {
+        number = 0;
+      }
+
+    });
+
+
+    function closeBlessing() {
+      popup.innerHTML = "";
+    }
+
+  </script>
+
+</body>
 </html>
